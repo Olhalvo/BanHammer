@@ -1,0 +1,18 @@
+name: BanHammer
+version: ${project.version}
+main: me.wellthatssad.BanHam.Main
+api-version: 1.16
+prefix: BH
+authors: [ wellthatssad ]
+description: Ban hammer
+website: https://github.com/Wellthatssad/
+commands:
+  banhammer:
+    usage: /<command>
+    description: Gives you the banhammer
+    aliases: [bh, banham, bhammer, bham]
+permissions:
+  BanHammer.CanUseBanhammer:
+    description: Permission to use the banhammer
+    default: op
+
