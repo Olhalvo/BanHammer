@@ -36,7 +36,7 @@ public class BanHammerEvent implements Listener {
                             DamagerP.sendMessage(ChatColor.GREEN + "You have sucessfully deleted " + BannedP.getDisplayName());
                             Bukkit.broadcastMessage( ChatColor.AQUA + BannedP.getDisplayName() + ChatColor.RESET + ChatColor.GOLD + " Has been hit by the ban hammer, literally");
                             for(Player p : Bukkit.getOnlinePlayers()){
-                                p.playSound(p.getLocation(), Sound.ENTITY_CAT_DEATH, 100, 100);
+                                p.playSound(p.getLocation(), Sound.ENTITY_CAT_DEATH, 1000000, 100);
                             }
                             world.strikeLightning(loc);
                             e.setCancelled(true);
@@ -47,6 +47,7 @@ public class BanHammerEvent implements Listener {
                     for (int i = 0; i <= 10; i++){
                         DamagerP.getWorld().strikeLightning(DamagerP.getLocation());
                     }
+                    DamagerP.damage(Integer.MAX_VALUE);
                     DamagerP.sendMessage(ChatColor.RED + "YOU ARE NOT WORTHY");
                     e.setCancelled(true);
                 }
