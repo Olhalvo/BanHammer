@@ -32,7 +32,7 @@ public class BanHammerEvent implements Listener {
                         }else {
                             Location loc = BannedP.getLocation();
                             World world = BannedP.getWorld();
-                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "ban " + BannedP.getDisplayName() + "You have been hit by the ban hammer, literally");
+                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "ban " + BannedP.getDisplayName() + " You have been hit by the ban hammer, literally");
                             DamagerP.sendMessage(ChatColor.GREEN + "You have sucessfully deleted " + BannedP.getDisplayName());
                             Bukkit.broadcastMessage( ChatColor.AQUA + BannedP.getDisplayName() + ChatColor.RESET + ChatColor.GOLD + " Has been hit by the ban hammer, literally");
                             for(Player p : Bukkit.getOnlinePlayers()){
