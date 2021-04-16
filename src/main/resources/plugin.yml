@@ -11,6 +11,10 @@ commands:
     usage: /<command>
     description: Gives you the banhammer
     aliases: [bh, banham, bhammer, bham]
+  kickhammer:
+    usage: /<command>
+    description: Gives you the kickhammer
+    aliases: [ kh, kickham, khammer, kham ]
 permissions:
   BanHammer.CanUseBanhammer:
     description: Permission to use the banhammer
