@@ -10,23 +10,26 @@ import org.bukkit.inventory.ItemStack;
 
 public class KickHammerEvent implements Listener {
     @EventHandler
-    public static void onHit(EntityDamageByEntityEvent e) {
+    public void onHit(EntityDamageByEntityEvent e) {
         Entity Damager = e.getDamager();
         Entity Banned = e.getEntity();
         if (Damager instanceof Player) {
             Player DamagerP = (Player) Damager;
-            ItemStack mainhandItem = DamagerP.getInventory().getItemInMainHand();
-            if (mainhandItem.getItemMeta().getLocalizedName().equals("kick_hammer")) {
+            if (DamagerP.getInventory().getItemInMainHand() != null
+                    && DamagerP.getInventory().getItemInMainHand().getType() != Material.AIR
+                    && DamagerP.getInventory().getItemInMainHand().hasItemMeta()
+                    && DamagerP.getInventory().getItemInMainHand().getItemMeta().getLocalizedName().equals("kick_hammer"))
+            {
                 if (DamagerP.hasPermission("BanHammer.CanUseBanhammer")) {
                     if (!(Banned instanceof Player)) {
                         DamagerP.sendMessage(ChatColor.RED + "You can't kick a " + Banned.getType().name());
-                        e.setCancelled(true);
+
                     }
                     else{
                         Player BannedP = (Player) Banned;
                         if(BannedP.isOp()){
                             DamagerP.sendMessage(ChatColor.RED + "You can't kick an operator");
-                            e.setCancelled(true);
+
                         }else {
                             Location loc = BannedP.getLocation();
                             World world = BannedP.getWorld();
@@ -37,7 +40,7 @@ public class KickHammerEvent implements Listener {
                                 p.playSound(p.getLocation(), Sound.AMBIENT_CAVE , 1000000, 100);
                             }
                             world.strikeLightning(loc);
-                            e.setCancelled(true);
+
                         }
                     }
                 }
@@ -47,8 +50,9 @@ public class KickHammerEvent implements Listener {
                     }
                     DamagerP.damage(Integer.MAX_VALUE);
                     DamagerP.sendMessage(ChatColor.RED + "YOU ARE NOT WORTHY");
-                    e.setCancelled(true);
+
                 }
+                e.setCancelled(true);
             }
         }
 
