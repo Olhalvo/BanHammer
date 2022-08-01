@@ -1,0 +1,6 @@
+me\wellthatssad\BanHam\Main.class
+me\wellthatssad\BanHam\extras\UpdateChecker.class
+me\wellthatssad\BanHam\Listeners\KickHammerEvent.class
+me\wellthatssad\BanHam\Commands\GiveBanhammerCommand.class
+me\wellthatssad\BanHam\Listeners\BanHammerEvent.class
+me\wellthatssad\BanHam\Commands\GiveKickHammerCommand.class
