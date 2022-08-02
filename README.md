@@ -16,8 +16,8 @@ upon hitting a non opped player with it the player gets banned or kicked out fro
 if you don't posses the permition to use it, you will be killed and struck by ligthing, as you are not worthy
 
 ## How do I download 
-Like most stuff from github you can compile this yourself or just nab the newest release
-the plugin is also available on my spigot profile https://www.spigotmc.org/members/slaman123.952487/
+Like most stuff from github you can compile this yourself or just nab the outdated release
+the plugin is also available and updated on my spigot profile https://www.spigotmc.org/members/slaman123.952487/
 
 ## I have found an error, or your code just sucks
 In case any of these two or any variation of it applies, just open an issue or PR on a branch with your name
