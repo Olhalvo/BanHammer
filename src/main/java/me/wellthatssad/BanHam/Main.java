@@ -5,20 +5,28 @@ import me.wellthatssad.BanHam.Commands.GiveKickHammerCommand;
 import me.wellthatssad.BanHam.Listeners.BanHammerEvent;
 import me.wellthatssad.BanHam.Listeners.KickHammerEvent;
 import me.wellthatssad.BanHam.extras.UpdateChecker;
+import org.bstats.bukkit.Metrics;
+import org.bstats.charts.DrilldownPie;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 public final class Main extends JavaPlugin {
 
     public UpdateChecker updateChecker;
+    public Metrics metrics;
     public final Logger console = this.getLogger();
+
 
     @Override
     public void onEnable() {
+        int pluginId = 16002;
+        metrics = new Metrics(this, 103297);
         updateChecker = new UpdateChecker(this, 103297);
         console.info("Initializing commands");
         this.getCommand("banhammer").setExecutor(new GiveBanhammerCommand());
@@ -43,6 +51,6 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        console.info("stopping plugin");
     }
 }

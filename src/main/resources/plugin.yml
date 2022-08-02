@@ -1,5 +1,5 @@
 name: BanHammer
-version: 1.4
+version: 1.5
 main: me.wellthatssad.BanHam.Main
 api-version: 1.16
 prefix: BH
