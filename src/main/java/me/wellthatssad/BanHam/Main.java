@@ -4,9 +4,8 @@ import me.wellthatssad.BanHam.Commands.GiveBanhammerCommand;
 import me.wellthatssad.BanHam.Commands.GiveKickHammerCommand;
 import me.wellthatssad.BanHam.Listeners.BanHammerEvent;
 import me.wellthatssad.BanHam.Listeners.KickHammerEvent;
+import me.wellthatssad.BanHam.extras.Metrics;
 import me.wellthatssad.BanHam.extras.UpdateChecker;
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.DrilldownPie;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,7 +25,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         int pluginId = 16002;
-        metrics = new Metrics(this, 103297);
+        metrics = new Metrics(this, pluginId);
         updateChecker = new UpdateChecker(this, 103297);
         console.info("Initializing commands");
         this.getCommand("banhammer").setExecutor(new GiveBanhammerCommand());
